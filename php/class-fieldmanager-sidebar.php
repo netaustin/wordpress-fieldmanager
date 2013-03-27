@@ -257,9 +257,8 @@ class Fieldmanager_Sidebar extends Fieldmanager_Options {
 			$post_id = get_the_ID();
 			if ( $post_id ){
 				//NEED TO FIGURE OUT A WAY TO GRAB GROUP ID & NAME FOR POST META FIELD
-				$custom_sidebar_name = 'sn_custom_sidebar';
-				$custom_sidebar_group = 'sn_custom_sidebar';
-				$custom_sidebar = get_post_meta( $post_id, $custom_sidebar_group, True );
+				$custom_sidebar_name = $args['id'];
+				$custom_sidebar = get_post_meta( $post_id, $custom_sidebar_name, True );
 				if ( !empty( $custom_sidebar ) ) {
 					$available_widgets = $this->get_widgets();
 
