@@ -25,6 +25,7 @@ require_once( dirname( __FILE__ ) . '/php/class-fieldmanager-options.php' );
 require_once( dirname( __FILE__ ) . '/php/class-fieldmanager-post.php' );
 require_once( dirname( __FILE__ ) . '/php/class-fieldmanager-media.php' );
 require_once( dirname( __FILE__ ) . '/php/class-fieldmanager-draggablepost.php' );
+require_once( dirname( __FILE__ ) . '/php/class-fieldmanager-sidebar.php' );
 
 /**
  * Add CSS and JS to admin area, hooked into admin_enqueue_scripts.
