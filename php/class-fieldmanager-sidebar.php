@@ -253,7 +253,8 @@ class Fieldmanager_Sidebar extends Fieldmanager_Options {
 	function show_sidebar( $instance, $widget_instance, $args ) {
 		global $wp_registered_widgets,$fm_custom_sidebar_displayed,$fm_parent_group_name;
 
-		if ( !$fm_custom_sidebar_displayed ){
+
+		if ( !isset( $fm_custom_sidebar_displayed ) ){
 			$post_id = get_the_ID();
 			if ( $post_id ){
 				//NEED TO FIGURE OUT A WAY TO GRAB GROUP ID & NAME FOR POST META FIELD
@@ -285,19 +286,16 @@ class Fieldmanager_Sidebar extends Fieldmanager_Options {
 						}
 						if ( !empty($new_args) && !empty($new_instance) ) {
 							$new_widget_instance->widget($new_args, $new_instance);
-							$fm_custom_sidebar_displayed = True;
 						}
 					}
+					$fm_custom_sidebar_displayed = True;
 					return false;
-
 				}
+				return $instance;
 			}
-		} elseif ( !isset( $fm_custom_sidebar_displayed ) ){
 			return $instance;
-
-		} else {
-			return false;
 		}
+		return false;
 	}
 }
 //Create Instace For custom sidebar display hook.
